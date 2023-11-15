@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PayloadController</title>
+<meta http-equiv="refresh" content="1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.centerdata {
+border: 5px solid;
+position: relative;
+padding: 5px;
+margin: 10px;
+overflow:auto;
+height: 200px;
+flex-direction: column-reverse;
+display: flex;
+} 
+.centercontainer{ position: absolute;
+text-align: center;
+padding:5px;
+margin: 10px;
+top: 50%;
+left: 50%;
+-ms-transform: translate(-50%,-50%);
+transform: translate(-50%,-50%);
+display: inline-block;}
+.centerheader {
+border: 5px solid;
+padding: 20px;
+line-height: 30px;
+text-align: center;
+height: 30px;
+margin: 10px;
+} 
+</style>
+</head>
+<body>
+<a href="/"><button>Back</button></a>
+<div class="centercontainer">
+<div class="centerheader">
+ReMAP_Messages
+</div>
+<div class="centerdata">
+<pre>{{remaptext}}</pre> 
+</div>
+</div>
+</body>
+</html>
