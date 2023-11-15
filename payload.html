@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PayloadController</title>
+<!--<meta http-equiv="refresh" content="15">--> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+setInterval(function(){
+$(".column").load(window.location.href + " .column >*" );
+}, 3000);
+});
+
+$(document).ready(function(){
+setInterval(function(){
+$(".columnsentcommands").load(window.location.href + " .columnsentcommands >*" );
+}, 3000);
+});
+
+</script>
+
+<style>
+
+.column{
+flex: 33.33%;
+height: 200px;
+padding: 5px;
+border: 5px solid;
+margin: 10px;
+overflow:auto;
+display: flex;
+flex-direction: column-reverse;
+position: relative;
+}
+.columnsentcommands {
+flex: 33.33%;
+height: 200px;
+padding: 5px;
+border: 5px solid;
+margin: 10px;
+text-align: center;
+overflow:auto;
+
+position: relative;
+}
+.columnsubmit {
+line-height: 200px;
+flex: 33.33%;
+height: 200px;
+padding: 10px;
+text-align: center;
+margin: 10px;
+border: 5px solid;
+overflow:auto;
+display:flex;
+flex-direction:column;
+position: relative;
+align-items: center;
+justify-content: center;
+
+}
+
+.columnheader {
+text-align: center;
+line-height: 30px;
+flex: 33.33%;
+height: 30px;
+padding: 10px;
+margin: 10px;
+border: 5px solid;
+}
+.columncontainer {
+position: relative;
+flex: 33.33%;
+text-align: center;
+padding: 5px;
+margin: 10px;
+
+display: inline-block;
+}
+.container {
+display: flex;
+align-items: center;
+justify-content: center;
+height:100vh;
+} 
+
+</style>
+</head>
+
+<body>
+<a href="/"><button>Back</button></a>
+<form action="" method="POST">
+<div class="container">
+<div class="columncontainer">
+<div class="columnheader">
+Payload Status
+</div>
+<div class="column">
+<pre>{{connection}}</pre>
+
+</div>
+</div>
+<div class="columncontainer">
+<div class="columnheader">
+Commands Sent
+</div>
+<div class="columnsentcommands">
+<pre>{{acknow}}</pre> 
+</div> 
+</div> 
+<div class="columncontainer">
+<div class="columnheader">
+Send Command
+</div>
+<div class="columnsubmit">
+<select name="payload_status" id="status">
+<option value="100">BOOTUP</option>
+<option value="103">FLYING</option>
+<option value="104">LANDING</option>
+<option value="105">CLEANUP</option>
+<option value="106">SHUTDOWN</option>
+<option value="200">WIFI_OFF</option>
+<option value="201">WIFI_ON</option>
+<option value="202">AZEL_SIM</option>
+<option value="203">AZEL_REAL</option>
+<option value="204">SIM_ON</option>
+<option value="205">SIM_OFF</option>
+<option value="206">RAW_DUMP</option>
+</select>
+<input type="submit" value="submit">
+
+</div>
+</div>
+</div>
+</form>
+</body>
+</html>
